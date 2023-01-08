@@ -17,7 +17,14 @@ defmodule ProjectSnowflakeWeb.Router do
   scope "/", ProjectSnowflakeWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", ProjectInfoController, :index
+    get "/project_infos/:id/edit", ProjectInfoController, :edit
+    get "/project_infos/new", ProjectInfoController, :new
+    get "/project_infos/:id", ProjectInfoController, :show
+    post "/project_infos", ProjectInfoController, :create
+    patch "/project_infos/:id", ProjectInfoController, :update
+    put "/project_infos/:id", ProjectInfoController, :update
+    delete "/project_infos/:id", ProjectInfoController, :delete
   end
 
   # Other scopes may use custom stacks.

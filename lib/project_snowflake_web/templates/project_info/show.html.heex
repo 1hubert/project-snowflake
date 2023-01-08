@@ -1,0 +1,28 @@
+<h1>Show Project info</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @project_info.title %>
+  </li>
+
+  <li>
+    <strong>Genre:</strong>
+    <%= @project_info.genre %>
+  </li>
+
+  <li>
+    <strong>Expected word count:</strong>
+    <%= @project_info.expected_word_count %>
+  </li>
+
+  <li>
+    <strong>Target reader:</strong>
+    <%= @project_info.target_reader %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.project_info_path(@conn, :edit, @project_info) %></span> |
+<span><%= link "Back", to: Routes.project_info_path(@conn, :index) %></span>

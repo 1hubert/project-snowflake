@@ -1,0 +1,32 @@
+<h1>Your Book Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Expected word count</th>
+      <th>Target reader</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for project_info <- @project_infos do %>
+    <tr>
+      <td><%= project_info.title %></td>
+      <td><%= project_info.genre %></td>
+      <td><%= project_info.expected_word_count %></td>
+      <td><%= project_info.target_reader %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.project_info_path(@conn, :show, project_info) %></span>
+        <span><%= link "Edit", to: Routes.project_info_path(@conn, :edit, project_info) %></span>
+        <span><%= link "Delete", to: Routes.project_info_path(@conn, :delete, project_info), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Create a new project", to: Routes.project_info_path(@conn, :new) %></span>
