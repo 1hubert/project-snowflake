@@ -11,10 +11,10 @@ defmodule ProjectSnowflake.ProjectsFixtures do
     {:ok, project_info} =
       attrs
       |> Enum.into(%{
-        expected_word_count: 42,
-        genre: "some genre",
-        target_reader: "some target_reader",
-        title: "some title"
+        expected_word_count: 9001,
+        genre: "Comedy",
+        target_reader: "Kindergarten kids with a dream of becoming a hairy wizard when they grow up",
+        title: "Barry Trotter"
       })
       |> ProjectSnowflake.Projects.create_project_info()
 

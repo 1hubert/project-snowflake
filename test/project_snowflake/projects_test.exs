@@ -21,13 +21,13 @@ defmodule ProjectSnowflake.ProjectsTest do
     end
 
     test "create_project_info/1 with valid data creates a project_info" do
-      valid_attrs = %{expected_word_count: 42, genre: "some genre", target_reader: "some target_reader", title: "some title"}
+      valid_attrs = %{expected_word_count: 9001, genre: "Comedy", target_reader: "Kindergarten kids with a dream of becoming a hairy wizard when they grow up", title: "Barry Trotter"}
 
       assert {:ok, %ProjectInfo{} = project_info} = Projects.create_project_info(valid_attrs)
-      assert project_info.expected_word_count == 42
-      assert project_info.genre == "some genre"
-      assert project_info.target_reader == "some target_reader"
-      assert project_info.title == "some title"
+      assert project_info.expected_word_count == 9001
+      assert project_info.genre == "Comedy"
+      assert project_info.target_reader == "Kindergarten kids with a dream of becoming a hairy wizard when they grow up"
+      assert project_info.title == "Barry Trotter"
     end
 
     test "create_project_info/1 with invalid data returns error changeset" do
@@ -36,13 +36,13 @@ defmodule ProjectSnowflake.ProjectsTest do
 
     test "update_project_info/2 with valid data updates the project_info" do
       project_info = project_info_fixture()
-      update_attrs = %{expected_word_count: 43, genre: "some updated genre", target_reader: "some updated target_reader", title: "some updated title"}
+      update_attrs = %{expected_word_count: 9002, genre: "Fantasy", target_reader: "Vintage camera enthusiasts", title: "In search of Bigfoot"}
 
       assert {:ok, %ProjectInfo{} = project_info} = Projects.update_project_info(project_info, update_attrs)
-      assert project_info.expected_word_count == 43
-      assert project_info.genre == "some updated genre"
-      assert project_info.target_reader == "some updated target_reader"
-      assert project_info.title == "some updated title"
+      assert project_info.expected_word_count == 9002
+      assert project_info.genre == "Fantasy"
+      assert project_info.target_reader == "Vintage camera enthusiasts"
+      assert project_info.title == "In search of Bigfoot"
     end
 
     test "update_project_info/2 with invalid data returns error changeset" do

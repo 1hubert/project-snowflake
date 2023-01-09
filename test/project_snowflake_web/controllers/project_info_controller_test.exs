@@ -3,8 +3,8 @@ defmodule ProjectSnowflakeWeb.ProjectInfoControllerTest do
 
   import ProjectSnowflake.ProjectsFixtures
 
-  @create_attrs %{expected_word_count: 42, genre: "some genre", target_reader: "some target_reader", title: "some title"}
-  @update_attrs %{expected_word_count: 43, genre: "some updated genre", target_reader: "some updated target_reader", title: "some updated title"}
+  @create_attrs %{expected_word_count: 9001, genre: "Comedy", target_reader: "Kindergarten kids with a dream of becoming a hairy wizard when they grow up", title: "Barry Trotter"}
+  @update_attrs %{expected_word_count: 9002, genre: "Fantasy", target_reader: "Vintage camera enthusiasts", title: "In search of Bigfoot"}
   @invalid_attrs %{expected_word_count: nil, genre: nil, target_reader: nil, title: nil}
 
   describe "index" do
@@ -55,7 +55,7 @@ defmodule ProjectSnowflakeWeb.ProjectInfoControllerTest do
       assert redirected_to(conn) == Routes.project_info_path(conn, :show, project_info)
 
       conn = get(conn, Routes.project_info_path(conn, :show, project_info))
-      assert html_response(conn, 200) =~ "some updated genre"
+      assert html_response(conn, 200) =~ "In search of Bigfoot"
     end
 
     test "renders errors when data is invalid", %{conn: conn, project_info: project_info} do
