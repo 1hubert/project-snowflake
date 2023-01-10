@@ -25,6 +25,8 @@ defmodule ProjectSnowflakeWeb.Router do
     patch "/project_infos/:id", ProjectInfoController, :update
     put "/project_infos/:id", ProjectInfoController, :update
     delete "/project_infos/:id", ProjectInfoController, :delete
+
+    get "/test_project/step1", SnowflakeMethodController, :step1
   end
 
   # Other scopes may use custom stacks.
