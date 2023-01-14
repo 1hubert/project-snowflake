@@ -10,7 +10,7 @@
   <%= error_tag f, :title %>
 
   <%= label f, :genre %>
-  <%= text_input f, :genre %>
+  <%= select f, :genre, ["Fantasy", "Science Fiction", "Dystopian", "Action", "Adventure", "Mystery", "Horror", "Thriller", "Historical Fiction", "Romance"], prompt: "Choose genre", style: "width: 100%;" %>
   <%= error_tag f, :genre %>
 
   <%= label f, :expected_word_count %>
